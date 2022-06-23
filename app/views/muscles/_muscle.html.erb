@@ -5,6 +5,13 @@
   </p>
 
   <p class="my-5">
+    <strong class="block font-medium mb-1">Image:</strong>
+    <% if muscle.image.attached? %>
+      <%= image_tag muscle.image %>
+    <% end %>
+  </p>
+
+  <p class="my-5">
     <strong class="block font-medium mb-1">Type:</strong>
     <%= muscle.training %>
   </p>
@@ -19,11 +26,7 @@
     <%= muscle.content %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Image:</strong>
-    <%= muscle.image %>
-  </p>
-
+  <%= link_to "Next muscle!", muscles_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   <% if action_name != "show" %>
     <%= link_to "Show this muscle", muscle, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this muscle', edit_muscle_path(muscle), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

@@ -4,7 +4,6 @@ class MusclesController < ApplicationController
   # GET /muscles
   def index
     @muscles = Muscle.where( 'id >= ?', rand(Muscle.first.id..Muscle.last.id) ).first
-
   end
 
   # GET /muscles/1

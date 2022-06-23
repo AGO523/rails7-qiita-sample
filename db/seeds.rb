@@ -1,6 +1,6 @@
 Muscle.delete_all
 
-Muscle.create!(
+muscle = Muscle.create!(
 	[
 		{
 			name: 'push_up',
@@ -46,3 +46,6 @@ Muscle.create!(
 		}
 	]
 )
+
+muscle.image.attach(io: File.open(Rails.root.join('app/assets/images/push_up.png')),
+filename: 'push_up.png')
